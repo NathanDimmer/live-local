@@ -5,8 +5,18 @@ class ImageSquare extends StatelessWidget {
   final String title;
   final bool showStar;
   final bool isStar;
+  final Function setStar;
+  final int realIndex;
+  final int totalIndex;
 
-  ImageSquare({this.image, this.title, this.showStar, this.isStar});
+  ImageSquare(
+      {this.image,
+      this.title,
+      this.showStar,
+      this.isStar,
+      this.setStar,
+      this.realIndex,
+      this.totalIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +55,20 @@ class ImageSquare extends StatelessWidget {
                       (isStar) ? Icons.star : Icons.star_border,
                       color: Colors.black,
                     ),
-                    onTap: () {}),
-                padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
+                    onTap: () {
+                      if (totalIndex < 0) {
+                        setStar(realIndex);
+                      } else {
+                        setStar(totalIndex);
+                      }
+                    }),
+                padding: EdgeInsets.fromLTRB(3, 3, 3, 3),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xCCFFFFFF),
                 ),
               ),
-              padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             ),
             visible: showStar,
           ),
