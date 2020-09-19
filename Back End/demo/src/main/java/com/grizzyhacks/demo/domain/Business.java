@@ -1,14 +1,14 @@
 package com.grizzyhacks.demo.domain;
 
-import javax.persistence.Entity;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Document(collection = "Business")
 public class Business {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
@@ -23,10 +23,12 @@ public class Business {
 
     private String image;
 
+    private String location;
+
     //TODO: Add Post and User relations
 
 
-    public Business(long id, String name, String address, String description, String link, String yelp, String image) {
+    public Business(long id, String name, String address, String description, String link, String yelp, String image, String location) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -34,6 +36,7 @@ public class Business {
         this.link = link;
         this.yelp = yelp;
         this.image = image;
+        this.location = location;
     }
 
     public long getId() {
@@ -90,5 +93,13 @@ public class Business {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
