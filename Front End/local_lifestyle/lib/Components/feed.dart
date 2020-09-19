@@ -4,8 +4,9 @@ import 'package:local_lifestyle/Components/imageSquare.dart';
 class FeedGrid extends StatelessWidget {
   final List businesses;
   final bool showStar;
+  final Function setStar;
 
-  FeedGrid({this.businesses, this.showStar});
+  FeedGrid({this.businesses, this.showStar, this.setStar});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,18 @@ class FeedGrid extends StatelessWidget {
         mainAxisSpacing: 20,
         // Generate 100 widgets that display their index in the List.
         children: businesses.map((business) {
+          int index = businesses.indexOf(business);
+
           return (Column(
             children: [
               ImageSquare(
                 image: business['image'],
                 title: business['name'],
-                isStar: false, //TODO: Replace with pulling from data
+                isStar: business['isStared'],
                 showStar: showStar,
+                setStar: setStar,
+                realIndex: index,
+                totalIndex: business['index'],
               ),
             ],
           ));
