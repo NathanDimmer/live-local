@@ -28,11 +28,6 @@ public class Business {
 
     private Boolean isStarred;
 
-    @DBRef
-    private List<User> usersIds;
-
-    //TODO: Add Post and User relations
-
     public Business(String name, String location) {
         this.name = name;
         this.location = location;
@@ -110,11 +105,4 @@ public class Business {
         isStarred = starred;
     }
 
-    public List<User> getUsersIds() {
-        return usersIds;
-    }
-
-    public void setUsersIds(List<User> usersIds) {
-        this.usersIds = usersIds;
-    }
 }

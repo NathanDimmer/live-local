@@ -18,7 +18,7 @@ public class User {
 
     private  String location;
 
-    private List<Post> posts;
+    private List<Post> postsIds;
 
     @DBRef
     private List<Business> businessesIds;
@@ -69,11 +69,11 @@ public class User {
         this.businessesIds = businessesIds;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public List<Post> getPostsIds() {
+        return postsIds;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setPostsIds(List<Post> postsIds) {
+        this.postsIds = postsIds;
     }
 }
