@@ -105,23 +105,55 @@ var business4 = {
   posts: [
     {
       image: "https://i.imgur.com/u3gUUl9.png",
-      title: "Model wearing Stuzo Clothing graphic tee",
+      title: "Model Wearing Stuzo Clothing Graphic Tee",
       description: "Model wearing Stuzo Clothing's \"Yup, still gay\" shirt.",
     },
     {
       image: "https://i.imgur.com/3RCxvhs.png",
-      title: "Models wearing Stuzo Clothing graphic tee",
+      title: "Models Wearing Stuzo Clothing Graphic Tee",
       description: "Models wearing Stuzo Clothing's \"Black Magic\" shirt.",
     },
     {
       image: "https://i.imgur.com/pePLicp.png",
-      title: "Model wearing Stuzo Clothing patterned tee",
+      title: "Model Wearing Stuzo Clothing Patterned Tee",
       description: "Model wearing Stuzo Clothing's Mola button-down shirt.",
     },
     {
       image: "https://i.imgur.com/bKFIsPn.png",
-      title: "Model wearing Stuzo Clothing graphic tee",
+      title: "Model Wearing Stuzo Clothing Graphic Tee",
       description: "Model wearing Stuzo Clothing \"Woman Up\" tee",
+    },
+  ],
+};
+
+var business5 = {
+  name: "Tamtak Jewelry",
+  address: "",
+  description: "Online store selling hand-crafted jewelry",
+  link: "https://tamtakjewelry.com/pages/about-us",
+  yelp: "",
+  image: "https://i.imgur.com/SOLRCIA.png",
+  tags: ["Necklaces", "Accessories", "Women-owned Business", "Asian-owned Business"],
+  posts: [
+    {
+      image: "https://i.imgur.com/91aC0LW.png",
+      title: "Handmade Charm Necklaces",
+      description: "Set of necklaces with butterfly and heart-shaped pendants",
+    },
+    {
+      image: "https://i.imgur.com/7AKDYZy.png",
+      title: "Stack of Rhinestone Rings",
+      description: "Butterfly rhinestone rings",
+    },
+    {
+      image: "https://i.imgur.com/MO5BL4y.png",
+      title: "Handmade Name Necklace",
+      description: "Customized, handmade name necklace",
+    },
+    {
+      image: "https://i.imgur.com/DNoa5F8.png",
+      title: "Handmade Name Necklace",
+      description: "Customized, handmade name necklace",
     },
   ],
 };
