@@ -5,7 +5,7 @@ var business1 = {
   link: "https://www.hotvillechicken.com/",
   yelp: "https://www.yelp.com/biz/hotville-chicken-los-angeles-2",
   image: "https://i.imgur.com/DECOJdq.jpg",
-  tags: ["Fried Chicken", "Southern", "Sandwich", "Hot Chicken", "Black-owned", "Crenshaw"],
+  tags: ["Fried Chicken", "Southern", "Sandwich", "Hot Chicken", "Black-owned", "Crenshaw", "Small Business"],
   posts: [
     {
       image: "https://i.imgur.com/HPYMGIn.png",
@@ -37,7 +37,7 @@ var business2 = {
   link: "https://www.shopririku.com/",
   yelp: "https://www.yelp.com/biz/ri-ri-ku-los-angeles?osq=Women+Owned+Businesses",
   image: "https://i.imgur.com/MO0gTCk.jpg",
-  tags: ["Women's CLothing", "Cosmetics", "Beauty", "Boutique", "Women-owned Business", "Accessories"],
+  tags: ["Women's CLothing", "Cosmetics", "Beauty", "Boutique", "Women-owned Business", "Accessories", "Small Business"],
   posts: [
     {
       image: "https://i.imgur.com/PWemnjr.jpg",
@@ -69,7 +69,7 @@ var business3 = {
   link: "https://www.coffeeandplantsla.com/",
   yelp: "https://www.yelp.com/biz/coffee-and-plants-pasadena?osq=black+owned",
   image: "https://i.imgur.com/4eoBjxu.png",
-  tags: ["Coffee", "Bakery", "Flowers", "Cafe", "Black-owned Business", "Brunch", "Tea"],
+  tags: ["Coffee", "Bakery", "Flowers", "Cafe", "Black-owned Business", "Brunch", "Tea", "Small Business"],
   posts: [
     {
       image: "https://i.imgur.com/fXxaAOd.png",
@@ -101,7 +101,7 @@ var business4 = {
   link: "https://www.stuzoclothing.com/",
   yelp: "https://www.yelp.com/biz/stuzo-clothing-los-angeles",
   image: "https://i.imgur.com/6CKxSPl.png",
-  tags: ["Clothing", "Accessories", "Women-owned Business", "Black-owned Business", "Queer-owned Business"],
+  tags: ["Clothing", "Accessories", "Women-owned Business", "Black-owned Business", "Queer-owned Business", "Small Business"],
   posts: [
     {
       image: "https://i.imgur.com/u3gUUl9.png",
@@ -133,7 +133,7 @@ var business5 = {
   link: "https://tamtakjewelry.com/pages/about-us",
   yelp: "",
   image: "https://i.imgur.com/SOLRCIA.png",
-  tags: ["Necklaces", "Accessories", "Women-owned Business", "Asian-owned Business"],
+  tags: ["Necklaces", "Accessories", "Women-owned Business", "Asian-owned Business", "Small Business"],
   posts: [
     {
       image: "https://i.imgur.com/91aC0LW.png",
@@ -158,3 +158,34 @@ var business5 = {
   ],
 };
 
+var business6 = {
+  name: "Light My Fire",
+  address: "6333 W 3rd St Ste 230 Los Angeles, CA 90036",
+  description: "Novelty Store selling over 1,000 spicy products at the Original Farmers Market",
+  link: "https://farmersmarketla.com/merchants/21/Light-My-Fire-",
+  yelp: "",
+  image: "https://i.imgur.com/ORJw0PP.png",
+  tags: ["Food", "Novelty", "Small Business", "Hot Sauce"],
+  posts: [
+    {
+      image: "https://i.imgur.com/WbnbUgN.png",
+      title: "Hot Sauce Bottle",
+      description: "Handyman Chipotle Sauce",
+    },
+    {
+      image: "https://i.imgur.com/J480x0D.png",
+      title: "Hot Sauce Bottle",
+      description: "Da Bomb Ghost Pepper Sauce",
+    },
+    {
+      image: "https://i.imgur.com/4JvptBp.png",
+      title: "Hot Sauce Bottle",
+      description: "Dia de los Muertos Hot Sauce",
+    },
+    {
+      image: "https://i.imgur.com/XbQLtsK.png",
+      title: "Seasoning Bottles",
+      description: "Range of food seasonings",
+    },
+  ],
+};
