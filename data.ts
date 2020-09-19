@@ -94,4 +94,35 @@ var business3 = {
   ],
 };
 
+var business4 = {
+  name: "Stuzo Clothing",
+  address: "4751 W. Washington Blvd Los Angeles, CA 90016",
+  description: "Stuzo CLothing is a gender-free clothing store. All clothes are made in Los Angeles, with the mission of embracing body positivity and de-gendering the fashion industry.",
+  link: "https://www.stuzoclothing.com/",
+  yelp: "https://www.yelp.com/biz/stuzo-clothing-los-angeles",
+  image: "https://i.imgur.com/6CKxSPl.png",
+  tags: ["Clothing", "Accessories", "Women-owned Business", "Black-owned Business", "Queer-owned Business"],
+  posts: [
+    {
+      image: "https://i.imgur.com/u3gUUl9.png",
+      title: "Model wearing Stuzo Clothing graphic tee",
+      description: "Model wearing Stuzo Clothing's \"Yup, still gay\" shirt.",
+    },
+    {
+      image: "https://i.imgur.com/3RCxvhs.png",
+      title: "Models wearing Stuzo Clothing graphic tee",
+      description: "Models wearing Stuzo Clothing's \"Black Magic\" shirt.",
+    },
+    {
+      image: "https://i.imgur.com/pePLicp.png",
+      title: "Model wearing Stuzo Clothing patterned tee",
+      description: "Model wearing Stuzo Clothing's Mola button-down shirt.",
+    },
+    {
+      image: "https://i.imgur.com/bKFIsPn.png",
+      title: "Model wearing Stuzo Clothing graphic tee",
+      description: "Model wearing Stuzo Clothing \"Woman Up\" tee",
+    },
+  ],
+};
 
