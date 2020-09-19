@@ -62,3 +62,36 @@ var business2 = {
   ],
 };
 
+var business3 = {
+  name: "Coffee and Plants",
+  address: "62 W Union St Unit 2 Pasadena, CA",
+  description: "Coffee shop serving baked goods, decorated with aesthetic flowers",
+  link: "https://www.coffeeandplantsla.com/",
+  yelp: "https://www.yelp.com/biz/coffee-and-plants-pasadena?osq=black+owned",
+  image: "https://i.imgur.com/4eoBjxu.png",
+  tags: ["Coffee", "Bakery", "Flowers", "Cafe", "Black-owned Business", "Brunch", "Tea"],
+  posts: [
+    {
+      image: "https://i.imgur.com/fXxaAOd.png",
+      title: "Drink from Coffee and Plants",
+      description: "Blue Lavender Latte",
+    },
+    {
+      image: "https://i.imgur.com/gaT0HbX.png",
+      title: "Tea Time at Coffee and Plants",
+      description: "Chocolate chip cookies, iced cofee, and a latte",
+    },
+    {
+      image: "https://i.imgur.com/NfYSdHW.png",
+      title: "Coffee from Coffee and Plants",
+      description: "Hot and iced coffee surrounded by flowers",
+    },
+    {
+      image: "https://i.imgur.com/N5zn0bE.png",
+      title: "Coffee and Plants-themed merchandise",
+      description: "T-shirts, plants, books, and hats for purchase",
+    },
+  ],
+};
+
+
