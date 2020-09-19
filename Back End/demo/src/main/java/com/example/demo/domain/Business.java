@@ -1,7 +1,10 @@
 package com.example.demo.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Document(collection = "Businesses")
 public class Business {
@@ -22,6 +25,11 @@ public class Business {
     private String image;
 
     private String location;
+
+    private Boolean isStarred;
+
+    @DBRef
+    private List<User> usersIds;
 
     //TODO: Add Post and User relations
 
@@ -92,5 +100,21 @@ public class Business {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Boolean getStarred() {
+        return isStarred;
+    }
+
+    public void setStarred(Boolean starred) {
+        isStarred = starred;
+    }
+
+    public List<User> getUsersIds() {
+        return usersIds;
+    }
+
+    public void setUsersIds(List<User> usersIds) {
+        this.usersIds = usersIds;
     }
 }
