@@ -1,15 +1,13 @@
-package com.grizzyhacks.demo.domain;
+package com.example.demo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "Businesses")
 public class Business {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
 
     private String name;
 
@@ -23,24 +21,20 @@ public class Business {
 
     private String image;
 
+    private String location;
+
     //TODO: Add Post and User relations
 
-
-    public Business(long id, String name, String address, String description, String link, String yelp, String image) {
-        this.id = id;
+    public Business(String name, String location) {
         this.name = name;
-        this.address = address;
-        this.description = description;
-        this.link = link;
-        this.yelp = yelp;
-        this.image = image;
+        this.location = location;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -90,5 +84,13 @@ public class Business {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
