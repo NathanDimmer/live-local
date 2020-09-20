@@ -83,7 +83,7 @@ var business3 = {
     },
     {
       image: "https://i.imgur.com/NfYSdHW.png",
-      title: "Coffee from Coffee and Plants",
+      title: "Coffee at Coffee and Plants",
       description: "Hot and iced coffee surrounded by flowers",
     },
     {
@@ -105,7 +105,7 @@ var business4 = {
   posts: [
     {
       image: "https://i.imgur.com/u3gUUl9.png",
-      title: "Model Wearing Stuzo Clothing Graphic Tee",
+      title: "Stuzo Clothing Graphic Tee",
       description: "Model wearing Stuzo Clothing's \"Yup, still gay\" shirt.",
     },
     {
@@ -115,7 +115,7 @@ var business4 = {
     },
     {
       image: "https://i.imgur.com/pePLicp.png",
-      title: "Model Wearing Stuzo Clothing Patterned Tee",
+      title: "Stuzo Clothing Patterned Tee",
       description: "Model wearing Stuzo Clothing's Mola button-down shirt.",
     },
     {
