@@ -5,6 +5,7 @@ void main() {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Local Lifestyle',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
+        backgroundColor: Color(0xFFebfcff),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Home(),
