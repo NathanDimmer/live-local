@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:local_lifestyle/Components/feed.dart';
 import 'package:local_lifestyle/Components/swipableFeeds.dart';
+import 'package:flutter_google_places/flutter_google_places.dart';
+import 'package:google_maps_webservice/places.dart';
+import 'package:geocoder/geocoder.dart';
+
+const kGoogleApiKey = "";
+
+GoogleMapsPlaces _places = GoogleMapsPlaces(apiKey: kGoogleApiKey);
 
 final pageController = PageController(
   initialPage: 0,
@@ -21,6 +27,8 @@ class _HomeState extends State<Home> {
       "link": "https://www.hotvillechicken.com/",
       "yelp": "https://www.yelp.com/biz/hotville-chicken-los-angeles-2",
       "image": "https://i.imgur.com/DECOJdq.jpg",
+      "isStared": false,
+      "index": -1,
       "tags": [
         "Fried Chicken",
         "Southern",
@@ -64,6 +72,8 @@ class _HomeState extends State<Home> {
       "yelp":
           "https://www.yelp.com/biz/ri-ri-ku-los-angeles?osq=Women+Owned+Businesses",
       "image": "https://i.imgur.com/MO0gTCk.jpg",
+      "isStared": false,
+      "index": -1,
       "tags": [
         "Women's CLothing",
         "Cosmetics",
@@ -106,6 +116,8 @@ class _HomeState extends State<Home> {
       "yelp":
           "https://www.yelp.com/biz/coffee-and-plants-pasadena?osq=black+owned",
       "image": "https://i.imgur.com/4eoBjxu.png",
+      "isStared": false,
+      "index": -1,
       "tags": [
         "Coffee",
         "Bakery",
@@ -147,6 +159,8 @@ class _HomeState extends State<Home> {
       "link": "https://www.stuzoclothing.com/",
       "yelp": "https://www.yelp.com/biz/stuzo-clothing-los-angeles",
       "image": "https://i.imgur.com/6CKxSPl.png",
+      "isStared": false,
+      "index": -1,
       "tags": [
         "Clothing",
         "Accessories",
@@ -188,6 +202,8 @@ class _HomeState extends State<Home> {
       "link": "https://tamtakjewelry.com/pages/about-us",
       "yelp": "",
       "image": "https://i.imgur.com/SOLRCIA.png",
+      "isStared": false,
+      "index": -1,
       "tags": [
         "Necklaces",
         "Accessories",
@@ -227,6 +243,8 @@ class _HomeState extends State<Home> {
       "link": "https://farmersmarketla.com/merchants/21/Light-My-Fire-",
       "yelp": "",
       "image": "https://i.imgur.com/ORJw0PP.png",
+      "isStared": false,
+      "index": -1,
       "tags": ["Food", "Novelty", "Small Business", "Hot Sauce"],
       "posts": [
         {
@@ -253,11 +271,33 @@ class _HomeState extends State<Home> {
     }
   ];
 
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   int screen = 0;
 
   void setScreen(int currentScreen) {
     setState(() {
       screen = currentScreen;
+    });
+  }
+
+  String city = "";
+
+  void setCity(String newCity) {
+    setState(() {
+      city = newCity;
+    });
+  }
+
+  void setStared(int index) {
+    setState(() {
+      businesses[index]['isStared'] = !businesses[index]['isStared'];
     });
   }
 
@@ -279,10 +319,48 @@ class _HomeState extends State<Home> {
                 ),
                 onPressed: null)
           ],
-          title: Text(
-            "Insert Current Location Here",
-            style: TextStyle(fontSize: 20),
-          ),
+          title: Container(
+              alignment: Alignment.center,
+              child: RaisedButton(
+                onPressed: () async {
+                  // show input autocomplete with selected mode
+                  // then get the Prediction selected
+                  Prediction p = await PlacesAutocomplete.show(
+                      context: context, apiKey: kGoogleApiKey);
+                  displayPrediction(p);
+                },
+                child: Text(
+                  (city == "") ? 'Set Location' : city,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                color: Colors.indigo[300],
+              )),
+          // title: Container(
+          //   child: TextField(
+          //     controller: _controller,
+          //     onTap: () async {
+          //       // placeholder for our places search later
+          //     },
+
+          //     // with some styling
+          //     decoration: InputDecoration(
+          //       hintText: "Current Location",
+          //       filled: true,
+          //       fillColor: Color(0x4DFFFFFF),
+          //       hintStyle: TextStyle(
+          //           color: Colors.white,
+          //           fontSize: 20,
+          //           fontWeight: FontWeight.bold),
+          //     ),
+          //     style: TextStyle(
+          //         color: Colors.white,
+          //         fontSize: 20,
+          //         fontWeight: FontWeight.bold),
+          //   ),
+          // ),
           centerTitle: true,
         ),
         body: SwipableFeeds(
@@ -290,7 +368,26 @@ class _HomeState extends State<Home> {
           staredBusinesses: businesses,
           setScreen: setScreen,
           pageController: pageController,
+          setStar: setStared,
         ));
+  }
+
+  Future<Null> displayPrediction(Prediction p) async {
+    if (p != null) {
+      PlacesDetailsResponse detail =
+          await _places.getDetailsByPlaceId(p.placeId);
+
+      setCity(detail.result.formattedAddress);
+
+      // var placeId = p.placeId;
+      // double lat = detail.result.geometry.location.lat;
+      // double lng = detail.result.geometry.location.lng;
+
+      // var address = await Geocoder.local.findAddressesFromQuery(p.description);
+
+      // // print(lat);
+      // // print(lng);
+    }
   }
 }
 
@@ -340,5 +437,3 @@ class BottomAppBarContents extends StatelessWidget {
     );
   }
 }
-
-//TODO: Add places search https://medium.com/comerge/location-search-autocomplete-in-flutter-84f155d44721
